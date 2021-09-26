@@ -1,7 +1,7 @@
 //Функция, возвращающая случайное целое число из переданного диапазона включительно.
 function getRandomInt(min, max) {
   if ((max < min) || (max < 0) || (min < 0)){
-    return ("переданы неккоректные данные");
+    return ('переданы неккоректные данные');
   }
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -13,9 +13,9 @@ getRandomInt();
 //Функция, возвращающая случайное число с плавающей точкой из переданного диапазона включительно.
 function getRandomArbitrary(min, max, numberRound) {
   if ((max < min) || (max < 0) || (min < 0) || (numberRound < 0)){
-    return ("переданы неккоректные данные");
+    return ('переданы неккоректные данные');
   }
-  let result = Math.random() * (max - min) + min;
+  const result = Math.random() * (max - min) + min;
   return ( +result.toFixed(numberRound) ); // с помощью + преобразую строку в число, т.к. toFixed возвращает string
 }
 
