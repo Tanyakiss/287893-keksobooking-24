@@ -1,7 +1,7 @@
 const TOTAL_ADS = 10;
 
-let offer = {
-  TITLE:[
+const offer = {
+  TITLES:[
     'Уютная квартира на Невском проспекте',
     'Парнас наше все',
     'Общежитие для студента',
@@ -17,7 +17,7 @@ let offer = {
     min: 20000,
     max: 80000,
   },
-  TYPE:[
+  TYPES:[
     'palace',
     'flat',
     'house',
@@ -69,7 +69,7 @@ let offer = {
 ],
 }
 
-let location = {
+const LOCATION = {
   lat:{
     min:35.65000,
     max:35.70000,
@@ -81,18 +81,19 @@ let location = {
 }
 
 //описываю функцию, кот создает одно объявление
-var createAdvertising = function (i){
+let createAdvertising = function (i){
   return{
     author: {
-      avatar:'img/avatars/user' + (i < 10 ? '0' : '') + (i + 1) + '.png'
+      avatar:'img/avatars/user{{xx}}.png',
     },
     offer:{
-      title:offer.TITLE[i],
+      title:offer.TITLES[i],
       address:[
         location.lat,
-        location.lng],
+        location.lng,
+      ],
       price:getRandomInt(offer.PRICE.min, offer.PRICE.max),
-      type:offer.TYPE[getRandomInt(0, offer.TYPE.length - 1)],
+      type:offer.TYPES[getRandomInt(0, offer.TYPES.length - 1)],
       rooms:getRandomInt(offer.ROOMS.min, offer.ROOMS.max),
       guests:getRandomInt(offer.GUESTS.min, offer.GUESTS.max),
       checkin:offer.CHECKIN[getRandomInt(0, offer.CHECKIN.length - 1)],
@@ -102,8 +103,8 @@ var createAdvertising = function (i){
       photos:offer.PHOTOS[getRandomInt(0, offer.PHOTOS.length - 1)],
     },
     location:{
-      lat:getRandomArbitrary(location.lat.min, location.lat.max, 5),
-      lng:getRandomArbitrary(location.lng.min, location.lng.max, 5),
+      lat:getRandomArbitrary(LOCATION.lat.min, LOCATION.lat.max, 5),
+      lng:getRandomArbitrary(LOCATION.lng.min, LOCATION.lng.max, 5),
     },
   };
 };
