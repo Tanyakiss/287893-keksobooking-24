@@ -88,11 +88,10 @@ var createAdvertising = function (i){
     },
     offer:{
       title:offer.TITLE[i],
-      price:getRandomInt(offer.PRICE.min, offer.PRICE.max),
       address:[
         location.lat,
         location.lng],
-      price:getRandomInt(PRICE.min,PRICE.max),
+      price:getRandomInt(offer.PRICE.min, offer.PRICE.max),
       type:offer.TYPE[getRandomInt(0, offer.TYPE.length - 1)],
       rooms:getRandomInt(ROOMS.min, ROOMS.max),
       guests:getRandomInt(GUESTS.min, GUESTS.max),
