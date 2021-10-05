@@ -1,10 +1,4 @@
-+'use strict';
-
 const TOTAL_ADS = 10;
-
-let author = {
-  avatar: 'img/avatars/user' + (i < 10 ? '0' : '') + (i + 1) + '.png',
-}
 
 let offer = {
   TITLE:[
@@ -18,10 +12,6 @@ let offer = {
     'Общежитие для студента',
     'Двушка для молодой семьи',
     'Просторная трешка',
-  ],
-  ADDRESS:[
-    location.lat,
-    location.lng,
   ],
   PRICE:{
     min: 20000,
@@ -91,10 +81,10 @@ let location = {
 }
 
 //описываю функцию, кот создает одно объявление
-const createAdvertising = () =>{
+var createAdvertising = function (i){
   return{
     author: {
-      avatar: 'img/avatars/user' + (i < 10 ? '0' : '') + (i + 1) + '.png'
+      avatar:'img/avatars/user' + (i < 10 ? '0' : '') + (i + 1) + '.png'
     },
     offer:{
       title:offer.TITLE[i],
@@ -119,7 +109,12 @@ const createAdvertising = () =>{
   };
 };
 
+let adsArr = [];
+for (let i = 0; i < TOTAL_ADS; i++) {
+  adsArr[i] = createAdvertising(i);
+}
 
+console.log(adsArr);
 //Функция, возвращающая случайное целое число из переданного диапазона включительно.
 function getRandomInt(min, max) {
   if ((max < min) || (max < 0) || (min < 0)){
