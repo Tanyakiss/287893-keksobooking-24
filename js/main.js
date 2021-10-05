@@ -32,12 +32,12 @@ const offer = {
     min:1,
     max:10,
   },
-  CHECKIN:[
+  CHECKINS:[
     '12:00',
     '13:00',
     '14:00',
   ],
-  CHECKOUT:[
+  CHECKOUTS:[
     '12:00',
     '13:00',
     '14:00',
@@ -50,7 +50,7 @@ const offer = {
     'elevator',
     'conditioner',
   ],
-  DESC:[
+  DESCS:[
     'Продается отличная 3-к квартира с ликвидной планировкой - на разные стороны, площадью 99/56/14 и плюс лоджия 9м (на кухню и комнату), просторный холл 20м, без отделки, с/у раздельные, высота потолков 2,80м. Вид на Волгу и на город. Смотрите расположение квартир по сторонам света.',
     'Собственник! Сдам в аренду на длительный срок 2-комн. квартиру, полностью мебелированную. ',
     'Без комиссии, залог за один месяц, можно разбить оплату на два месяца. Ком услуги входят в стоимость.',
@@ -89,17 +89,17 @@ let createAdvertising = function (i){
     offer:{
       title:offer.TITLES[i],
       address:[
-        location.lat,
-        location.lng,
+        LOCATION.lat,
+        LOCATION.lng,
       ],
       price:getRandomInt(offer.PRICE.min, offer.PRICE.max),
       type:offer.TYPES[getRandomInt(0, offer.TYPES.length - 1)],
       rooms:getRandomInt(offer.ROOMS.min, offer.ROOMS.max),
       guests:getRandomInt(offer.GUESTS.min, offer.GUESTS.max),
-      checkin:offer.CHECKIN[getRandomInt(0, offer.CHECKIN.length - 1)],
-      checkout:offer.CHECKOUT[getRandomInt(0, offer.CHECKOUT.length - 1)],
+      checkin:offer.CHECKINS[getRandomInt(0, offer.CHECKIN.length - 1)],
+      checkout:offer.CHECKOUTS[getRandomInt(0, offer.CHECKOUT.length - 1)],
       features:offer.FEATURES[getRandomInt(0, offer.FEATURES.length - 1)],
-      description:offer.DESC[i],
+      description:offer.DESCS[i],
       photos:offer.PHOTOS[getRandomInt(0, offer.PHOTOS.length - 1)],
     },
     location:{
