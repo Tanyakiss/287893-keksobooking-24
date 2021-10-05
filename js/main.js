@@ -137,5 +137,5 @@ function getRandomArbitrary(min, max, numberRound) {
   const result = Math.random() * (max - min) + min;
   return ( +result.toFixed(numberRound) ); // с помощью + преобразую строку в число, т.к. toFixed возвращает string
 }
-
+//
 getRandomArbitrary();
