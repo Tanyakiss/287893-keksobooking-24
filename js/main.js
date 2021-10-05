@@ -93,8 +93,8 @@ var createAdvertising = function (i){
         location.lng],
       price:getRandomInt(offer.PRICE.min, offer.PRICE.max),
       type:offer.TYPE[getRandomInt(0, offer.TYPE.length - 1)],
-      rooms:getRandomInt(ROOMS.min, ROOMS.max),
-      guests:getRandomInt(GUESTS.min, GUESTS.max),
+      rooms:getRandomInt(offer.ROOMS.min, offer.ROOMS.max),
+      guests:getRandomInt(offer.GUESTS.min, offer.GUESTS.max),
       checkin:offer.CHECKIN[getRandomInt(0, offer.CHECKIN.length - 1)],
       checkout:offer.CHECKOUT[getRandomInt(0, offer.CHECKOUT.length - 1)],
       features:offer.FEATURES[getRandomInt(0, offer.FEATURES.length - 1)],
@@ -113,7 +113,6 @@ for (let i = 0; i < TOTAL_ADS; i++) {
   adsArr[i] = createAdvertising(i);
 }
 
-console.log(adsArr);
 //Функция, возвращающая случайное целое число из переданного диапазона включительно.
 function getRandomInt(min, max) {
   if ((max < min) || (max < 0) || (min < 0)){
