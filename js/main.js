@@ -81,7 +81,7 @@ const LOCATION = {
 }
 
 //описываю функцию, кот создает одно объявление
-let createAdvertising = function (i){
+const createAdvertising = () => {
   return{
     author: {
       avatar:'img/avatars/user{{xx}}.png',
