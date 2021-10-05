@@ -82,8 +82,8 @@ const LOCATION = {
 
 //описываю функцию, кот создает одно объявление
 const createAdvertising = () => {
-  const randomTitlesIndex = _.random(0, TITLES.length - 1);
-  const randomDescsIndex = _.random(0, DESCS.length - 1);
+  const randomTitlesIndex = getRandomInt(0, offer.TITLES.length - 1 );
+  const randomDescsIndex = getRandomInt(0,  offer.DESCS.length - 1 );
 
   return{
       author: {
