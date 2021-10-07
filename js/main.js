@@ -139,4 +139,3 @@ let adsArr = [];
 for (let i = 0; i < TOTAL_ADS; i++) {
   adsArr[i] = createAdvertising(i);
 }
-
