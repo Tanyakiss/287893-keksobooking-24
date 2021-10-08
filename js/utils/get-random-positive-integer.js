@@ -1,6 +1,3 @@
-// Функция взята из интернета и доработана
-// Источник - https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_random
-
 function getRandomPositiveInteger (aaa, bbb) {
   // Чтобы не заставлять пользователя нашей функции помнить порядок аргументов,
   // реализуем поддержку передачи минимального и максимального значения в любом порядке,
@@ -27,3 +24,4 @@ function getRandomPositiveInteger (aaa, bbb) {
   return Math.floor(result);
 }
 getRandomPositiveInteger();
+
