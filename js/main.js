@@ -90,7 +90,7 @@ const offer = {
     'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
     'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg',
   ],
-}
+};
 
 const LOCATION = {
   lat: {
@@ -101,7 +101,7 @@ const LOCATION = {
     min: 139.70000,
     max: 139.80000,
   },
-}
+};
 
 //описываю функцию, кот создает одно объявление
 const createAdvertising = () => {
@@ -135,8 +135,8 @@ const createAdvertising = () => {
   };
 };
 
-let adsArr = [];
-for (let i = 0; i < TOTAL_ADS; i++) {
-  adsArr[i] = createAdvertising(i);
+const ADSARRS = [];
+for (let count = 0; count < TOTAL_ADS; count++) {
+  ADSARRS[count] = createAdvertising(count);
 }
 
