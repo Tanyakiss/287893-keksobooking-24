@@ -19,5 +19,5 @@ function getRandomPositiveFloat (aaa, bbb, digits = 1) {
   // И в конце с помощью метода toFixed любого числа в JavaScript
   // указать требуемое количество знаков после точки
   return result.toFixed(digits);
-};
+}
 getRandomPositiveFloat();
