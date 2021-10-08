@@ -140,3 +140,4 @@ for (let count = 0; count < TOTAL_ADS; count++) {
   ADSARRS[count] = createAdvertising(count);
 }
 
+
