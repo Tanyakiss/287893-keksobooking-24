@@ -1,5 +1,3 @@
-
-<<<<<<< HEAD
 function getRandomPositiveFloat (aaa, bbb, digits = 1) {
   // Чтобы не заставлять пользователя нашей функции помнить порядок аргументов,
   // реализуем поддержку передачи минимального и максимального значения в любом порядке,
@@ -21,5 +19,3 @@ function getRandomPositiveFloat (aaa, bbb, digits = 1) {
 }
 getRandomPositiveFloat();
 
-=======
->>>>>>> 3c75fdc39af84acf4dcd5efe63f8df49f47b9806
