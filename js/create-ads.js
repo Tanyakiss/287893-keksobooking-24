@@ -1,4 +1,7 @@
 //описываю функцию, кот создает одно объявление
+import {getRandomInt, getRandomArbitrary} from './util.js';
+import {offer, LOCATION} from './data.js';
+
 const createAdvertising = () => {
   const randomTitlesIndex = getRandomInt(0, offer.TITLES.length - 1);
   const randomDescsIndex = getRandomInt(0, offer.DESCS.length - 1);
