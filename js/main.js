@@ -1,5 +1,5 @@
-import {getRandomInt, getRandomArbitrary} from './js/util.js';
-import {offer, LOCATION} from './js/data.js';
+import {getRandomInt, getRandomArbitrary} from '../util.js';
+import {offer, LOCATION} from '../data.js';
 const TOTAL_ADS = 10;
 
 
