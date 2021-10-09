@@ -1,6 +1,6 @@
 import {getRandomInt, getRandomArbitrary} from './util.js';
 import {offer, LOCATION} from './data.js';
-import {createAdvertising} from './create-ads';
+import {createAdvertising} from './create-ads.js';
 
 const TOTAL_ADS = 10;
 const ADSARRS = [];
