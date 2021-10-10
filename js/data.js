@@ -1,4 +1,4 @@
-const offer = {
+const OFFER = {
   TITLES: [
     'Уютная квартира на Невском проспекте',
     'Парнас наше все',
@@ -78,4 +78,4 @@ const LOCATION = {
   },
 };
 
-export {offer, LOCATION};
+export {OFFER, LOCATION};
