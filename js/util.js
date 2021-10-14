@@ -24,9 +24,11 @@ const getRussianCase = (integer, russianWord) => {
   const remainder = integer % 10;
   if (integer > 10 && integer < 20) {
     return russianWord[2];
-  } else if (remainder > 1 && remainder < 5) {
+  }
+  if (remainder > 1 && remainder < 5) {
     return russianWord[1];
-  } else if (remainder === 1) {
+  }
+  if (remainder === 1) {
     return russianWord[0];
   }
   return russianWord[2];
