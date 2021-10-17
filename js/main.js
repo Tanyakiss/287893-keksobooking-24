@@ -1,5 +1,8 @@
 import {createAdvertising} from './create-ads.js';
 import {OFFER} from './data.js';
+import './form.js';
+import './popup.js';
+
 const TOTAL_ADS = 10;
 const ADSARRS = [];
 
