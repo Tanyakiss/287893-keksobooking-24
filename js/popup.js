@@ -1,4 +1,5 @@
-import {createAdvertising, GUESTS, ROOMS} from './data.js';
+import {createAdvertising} from './create-ads.js';
+import {GUESTS, ROOMS} from './data.js';
 import {getRussianCase, getRussianGenitiveCase, getAccommodationType} from './util.js';
 
 const map = document.querySelector('.map');
