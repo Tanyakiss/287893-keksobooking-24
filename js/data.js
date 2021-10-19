@@ -78,4 +78,7 @@ const LOCATION = {
   },
 };
 
-export {OFFER, LOCATION};
+const GUESTS = ['гостя', 'гостей'];
+const ROOMS = ['комната', 'комнаты', 'комнат'];
+
+export {OFFER, LOCATION, GUESTS, ROOMS};
