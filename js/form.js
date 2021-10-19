@@ -10,7 +10,7 @@ const adPrice = adForm.querySelector('#price');
 const adRoomNumber = adForm.querySelector('#room_number');
 const adGuestNumber = adForm.querySelector('#capacity');
 
-//Чтобы не запускать onSelectRoomChange когда страница загрузится. Также можно было это сделать в html.
+
 adGuestNumber.querySelector('option[value="1"]').setAttribute('selected', 'selected');
 
 const onSelectRoomChange = () => {
@@ -52,6 +52,7 @@ adPrice.addEventListener('input', () => {
 
   adPrice.reportValidity();
 });
+
 
 adRoomNumber.addEventListener('change', onSelectRoomChange);
 adGuestNumber.addEventListener('change', onSelectRoomChange);
