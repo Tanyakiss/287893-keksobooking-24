@@ -1,6 +1,6 @@
 //описываю функцию, кот создает одно объявление
 import {getRandomInt, getRandomArbitrary, getRandomArrayElement} from './util.js';
-import {LOCATION, OFFER} from './data.js';
+import {LOCATION} from './data.js';
 
 const SIMILAR_ADS_COUNT = 10;
 
@@ -32,6 +32,6 @@ const createAdvertising = (offer) => {
   };
 };
 
-const createAds = () => new Array(SIMILAR_ADS_COUNT).fill(null).map(() => createAdvertising(OFFER));
+const createAds = () => new Array(SIMILAR_ADS_COUNT).fill(null).map(() => createAdvertising());
 
 export {createAds, createAdvertising};
