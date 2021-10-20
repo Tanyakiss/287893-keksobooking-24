@@ -33,5 +33,5 @@ const createAdvertising = (offer) => {
 };
 
 const createAds = () => new Array(SIMILAR_ADS_COUNT).fill(null).map(() => createAdvertising());
-
+createAds;
 export {createAds, createAdvertising};
