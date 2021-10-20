@@ -1,6 +1,5 @@
-import {createAds} from './create-ads.js';
 import {GUESTS, ROOMS} from './data.js';
-import {getRussianCase, getRussianGenitiveCase, getAccommodationType} from './util.js';
+import {createAds, getRussianCase, getRussianGenitiveCase, getAccommodationType} from './util.js';
 
 const map = document.querySelector('.map');
 const mapCanvas = map.querySelector('#map-canvas');
