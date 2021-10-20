@@ -42,7 +42,7 @@ similarAds.forEach((ad) => {
     adElement.querySelector('.popup__features').classList.add('visually-hidden');
   }
   ad.offer.description ? adElement.querySelector('.popup__description').textContent = ad.offer.description : adElement.querySelector('.popup__description').classList.add('visually-hidden');
-  /*if (ad.offer.photos) {
+  if (ad.offer.photos) {
     ad.offer.photos.forEach((item) => {
       const img = adElement.querySelector('.popup__photo').cloneNode();
       img.setAttribute('src', item);
@@ -51,7 +51,7 @@ similarAds.forEach((ad) => {
     adElement.querySelector('.popup__photo').remove();
   } else {
     adElement.querySelector('.popup__photos').classList.add('visually-hidden');
-  }*/
+  }
   similarListFragment.appendChild(adElement);
 });
 
