@@ -1,3 +1,4 @@
+import {getRandomArrayElement, getRandomInt, getRandomArbitrary} from './util.js';
 const OFFER = {
   TITLES: [
     'Уютная квартира на Невском проспекте',
@@ -82,8 +83,6 @@ const GUESTS = ['гостя', 'гостей'];
 const ROOMS = ['комната', 'комнаты', 'комнат'];
 const SIMILAR_ADS_COUNT = 10;
 
-export {OFFER, LOCATION, GUESTS, ROOMS, SIMILAR_ADS_COUNT};
-
 const createAdvertising = () => {
   return {
     author: {
@@ -115,3 +114,4 @@ const createAdvertising = () => {
 const createAds = () => new Array(SIMILAR_ADS_COUNT).fill(null).map(() => createAdvertising());
 createAds;
 export {createAds, createAdvertising};
+export {OFFER, LOCATION, GUESTS, ROOMS, SIMILAR_ADS_COUNT};
