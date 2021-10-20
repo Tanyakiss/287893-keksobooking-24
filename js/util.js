@@ -59,3 +59,18 @@ const getAccommodationType = (type) => {
 };
 
 export {getAccommodationType};
+
+const getRandomArray = (parentArray) => {
+  const arrayCopy = parentArray.slice();
+  const deletedElementsCount = getRandomInt(0, arrayCopy.length);
+  for (let counter = 0; counter < deletedElementsCount; counter++) {
+    arrayCopy.splice(getRandomInt(0, arrayCopy.length - 1), 1);
+  }
+  return arrayCopy;
+};
+
+export {getRandomArray};
+
+const getRandomArrayElement = (array) => array[getRandomInt(0, array.length - 1)];
+
+export {getRandomArrayElement};

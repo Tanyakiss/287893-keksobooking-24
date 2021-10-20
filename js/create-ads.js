@@ -1,17 +1,16 @@
 //описываю функцию, кот создает одно объявление
-import {getRandomInt, getRandomArbitrary} from './util.js';
-import {LOCATION} from './data.js';
+import {getRandomInt, getRandomArbitrary, getRandomArrayElement} from './util.js';
+import {LOCATION, OFFER} from './data.js';
+
+const SIMILAR_ADS_COUNT = 10;
 
 const createAdvertising = (offer) => {
-  const randomTitlesIndex = getRandomInt(0, offer.TITLES.length - 1);
-  const randomDescsIndex = getRandomInt(0, offer.DESCS.length - 1);
-
   return {
     author: {
       avatar: 'img/avatars/user{{xx}}.png',
     },
     offer: {
-      title: offer.TITLES[randomTitlesIndex],
+      title: getRandomArrayElement(offer.TITLES),
       address: [
         LOCATION.lat,
         LOCATION.lng,
@@ -20,10 +19,10 @@ const createAdvertising = (offer) => {
       type: offer.TYPES[getRandomInt(0, offer.TYPES.length - 1)],
       rooms: getRandomInt(offer.ROOMS.min, offer.ROOMS.max),
       guests: getRandomInt(offer.GUESTS.min, offer.GUESTS.max),
-      checkin: offer.CHECKINS[getRandomInt(0, offer.CHECKINS.length - 1)],
+      checkin:offer.CHECKINS[getRandomInt(0, offer.CHECKINS.length - 1)],
       checkout: offer.CHECKOUTS[getRandomInt(0, offer.CHECKOUTS.length - 1)],
       features: offer.FEATURES[getRandomInt(0, offer.FEATURES.length - 1)],
-      description: offer.DESCS[randomDescsIndex],
+      description: getRandomArrayElement(offer.DESCS),
       photos: offer.PHOTOS[getRandomInt(0, offer.PHOTOS.length - 1)],
     },
     location: {
@@ -33,4 +32,7 @@ const createAdvertising = (offer) => {
   };
 };
 
-export {createAdvertising};
+const createAds = () => new Array(SIMILAR_ADS_COUNT).fill(null).map(() => createAdvertising(OFFER));
+
+createAds;
+export {createAds, createAdvertising};

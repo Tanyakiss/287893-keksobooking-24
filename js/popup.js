@@ -1,4 +1,4 @@
-import {createAdvertising} from './create-ads.js';
+import {createAds} from './create-ads.js';
 import {GUESTS, ROOMS} from './data.js';
 import {getRussianCase, getRussianGenitiveCase, getAccommodationType} from './util.js';
 
@@ -6,7 +6,7 @@ const map = document.querySelector('.map');
 const mapCanvas = map.querySelector('#map-canvas');
 const adCardTemplate = document.querySelector('#card').content.querySelector('.popup');
 
-const similarAds = createAdvertising();
+const similarAds = createAds();
 
 const similarListFragment = document.createDocumentFragment();
 
@@ -42,7 +42,7 @@ similarAds.forEach((ad) => {
     adElement.querySelector('.popup__features').classList.add('visually-hidden');
   }
   ad.offer.description ? adElement.querySelector('.popup__description').textContent = ad.offer.description : adElement.querySelector('.popup__description').classList.add('visually-hidden');
-  if (ad.offer.photos) {
+  /*if (ad.offer.photos) {
     ad.offer.photos.forEach((item) => {
       const img = adElement.querySelector('.popup__photo').cloneNode();
       img.setAttribute('src', item);
@@ -51,7 +51,7 @@ similarAds.forEach((ad) => {
     adElement.querySelector('.popup__photo').remove();
   } else {
     adElement.querySelector('.popup__photos').classList.add('visually-hidden');
-  }
+  }*/
   similarListFragment.appendChild(adElement);
 });
 
