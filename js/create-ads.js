@@ -4,7 +4,7 @@ import {LOCATION} from './data.js';
 
 const SIMILAR_ADS_COUNT = 10;
 
-const createAdvertising = (offer) => {
+const createAdvertising = () => {
   return {
     author: {
       avatar: 'img/avatars/user{{xx}}.png',
