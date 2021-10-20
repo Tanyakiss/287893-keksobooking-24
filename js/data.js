@@ -83,8 +83,7 @@ const GUESTS = ['гостя', 'гостей'];
 const ROOMS = ['комната', 'комнаты', 'комнат'];
 const SIMILAR_ADS_COUNT = 10;
 
-const createAdvertising = () => {
-  return {
+const createAdvertising = () => ({
     author: {
       avatar: 'img/avatars/user{{xx}}.png',
     },
@@ -108,8 +107,7 @@ const createAdvertising = () => {
       lat: getRandomArbitrary(LOCATION.lat.min, LOCATION.lat.max, 5),
       lng: getRandomArbitrary(LOCATION.lng.min, LOCATION.lng.max, 5),
     },
-  };
-};
+});
 
 const createAds = () => new Array(SIMILAR_ADS_COUNT).fill(null).map(() => createAdvertising());
 createAds;
