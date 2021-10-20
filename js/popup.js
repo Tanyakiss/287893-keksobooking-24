@@ -54,4 +54,4 @@ const createCustomPopup = (offer) => {
   similarListFragment.appendChild(adElement);
 };
 
-
+export {mapCanvas, similarAds, createCustomPopup};
