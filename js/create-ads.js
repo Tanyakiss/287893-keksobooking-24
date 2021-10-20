@@ -32,7 +32,9 @@ const createAdvertising = (offer) => {
   };
 };
 
-const createAds = () => new Array(SIMILAR_ADS_COUNT).fill(null).map(() => createAdvertising(OFFER));
+function createAds() {
+  return new Array(SIMILAR_ADS_COUNT).fill(null).map(() => createAdvertising(OFFER));
+}
 createAds;
 export {createAds, createAdvertising};
 
