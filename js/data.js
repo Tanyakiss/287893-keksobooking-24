@@ -1,3 +1,4 @@
+import { getRandomArrayElement, getRandomInt, getRandomArbitrary } from './util.js';
 const OFFER = {
   TITLES: [
     'Уютная квартира на Невском проспекте',
@@ -78,4 +79,37 @@ const LOCATION = {
   },
 };
 
-export {OFFER, LOCATION};
+const GUESTS = ['гостя', 'гостей'];
+const ROOMS = ['комната', 'комнаты', 'комнат'];
+const SIMILAR_ADS_COUNT = 10;
+
+const createAdvertising = () => ({
+  author: {
+    avatar: 'img/avatars/user{{xx}}.png',
+  },
+  OFFER: {
+    title: getRandomArrayElement(OFFER.TITLES),
+    address: [
+      LOCATION.lat,
+      LOCATION.lng,
+    ],
+    price: getRandomInt(OFFER.PRICE.min, OFFER.PRICE.max),
+    type: OFFER.TYPES[getRandomInt(0, OFFER.TYPES.length - 1)],
+    rooms: getRandomInt(OFFER.ROOMS.min, OFFER.ROOMS.max),
+    guests: getRandomInt(OFFER.GUESTS.min, OFFER.GUESTS.max),
+    checkin: OFFER.CHECKINS[getRandomInt(0, OFFER.CHECKINS.length - 1)],
+    checkout: OFFER.CHECKOUTS[getRandomInt(0, OFFER.CHECKOUTS.length - 1)],
+    features: OFFER.FEATURES[getRandomInt(0, OFFER.FEATURES.length - 1)],
+    description: getRandomArrayElement(OFFER.DESCS),
+    photos: OFFER.PHOTOS[getRandomInt(0, OFFER.PHOTOS.length - 1)],
+  },
+  location: {
+    lat: getRandomArbitrary(LOCATION.lat.min, LOCATION.lat.max, 5),
+    lng: getRandomArbitrary(LOCATION.lng.min, LOCATION.lng.max, 5),
+  },
+});
+
+const createAds = () => new Array(SIMILAR_ADS_COUNT).fill(null).map(() => createAdvertising());
+
+export { createAds, createAdvertising };
+export { OFFER, LOCATION, GUESTS, ROOMS};
