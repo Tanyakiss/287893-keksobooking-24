@@ -5,7 +5,7 @@ import {similarAds, createCustomPopup} from './popup.js';
 const TOKYO_LAT = 35.68950;
 const TOKYO_LNG = 139.69171;
 
-const map = L.map('map')
+const map = L.map('map-canvas')
   .on('load', () => {
     useActivePageState();
   })
