@@ -130,4 +130,4 @@ adCkeckout.addEventListener('change', getSameTimeIn);
 useInactivePageState();
 useInactivePageState();
 
-export {useInactivePageState, adAddress}
+export {useInactivePageState, useActivePageState, adAddress}
