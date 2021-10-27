@@ -19,7 +19,7 @@ const adCkeckout = adForm.querySelector('#timeout');
 const adRoomNumber = adForm.querySelector('#room_number');
 const adGuestNumber = adForm.querySelector('#capacity');
 const filterForm = document.querySelector('.map__filters');
-
+const adAddress = adForm.querySelector('#address');
 
 const filterFormFields = Array.from(filterForm.children);
 
@@ -128,4 +128,6 @@ adCkeckin.addEventListener('change', getSameTimeOut);
 adCkeckout.addEventListener('change', getSameTimeIn);
 
 useInactivePageState();
-useActivePageState();
+useInactivePageState();
+
+export {useInactivePageState, useActivePageState, adAddress};
