@@ -135,12 +135,12 @@ useInactivePageState();
 useInactivePageState();
 
 const resetUserForm = () => {
-  setMainPinCoords(TOKYO_CENTER_LAT, TOKYO_CENTER_LNG);
+  setMainPinCoords(TOKYO_LAT, TOKYO_LNG);
 };
 
 const sendUserForm = () => {
   adForm.reset();
-  setMainPinCoords(TOKYO_CENTER_LAT, TOKYO_CENTER_LNG);
+  setMainPinCoords(TOKYO_LAT, TOKYO_LNG);
 };
 
 const setUserFormSubmit = (onSuccess) => {
