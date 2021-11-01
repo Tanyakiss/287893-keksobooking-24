@@ -1,5 +1,5 @@
 import {setMainPinCoords, TOKYO_LAT, TOKYO_LNG} from './map-render.js';
-import {openErrorModal, adSuccess, adError} from './modal.js';
+import {openErrorModal} from './modal.js';
 import {sendData} from './server.js';
 
 const MIN_TITLE_LENGTH = 30;
