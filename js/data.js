@@ -112,4 +112,4 @@ const createAdvertising = () => ({
 const createAds = () => new Array(SIMILAR_ADS_COUNT).fill(null).map(() => createAdvertising());
 
 export { createAds, createAdvertising };
-export { OFFER, LOCATION, GUESTS, ROOMS};
+export { OFFER, LOCATION, GUESTS, ROOMS, SIMILAR_ADS_COUNT};

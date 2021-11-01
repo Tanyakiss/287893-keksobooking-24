@@ -1,4 +1,4 @@
-import {openSuccessModal} from './user-modal.js';
+import {openSuccessModal} from './modal.js';
 
 const getData = async (url, onSuccess, onError) => {
   const ads = await fetch(url)

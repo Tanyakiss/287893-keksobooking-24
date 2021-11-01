@@ -69,14 +69,23 @@ const createMarker = (avatar, offer, point) => {
     );
 };
 
-adAddress.setAttribute('placeholder', `${getRandomArbitrary(TOKYO_LAT, 5)}, ${getRandomArbitrary(TOKYO_LNG, 5)}`);
+const setMainPinCoords = (lat, lng) => {
+  mainPinMarker
+    .setLatLng({
+      lat: lat,
+      lng: lng,
+    });
+  adAddress.setAttribute('value', `${getRandomFloatNumber(lat, 5)}, ${getRandomFloatNumber(lng, 5)}`);
+  adAddress.setAttribute('placeholder', `${getRandomFloatNumber(lat, 5)}, ${getRandomFloatNumber(lng, 5)}`);
+};
+
+setMainPinCoords(TOKYO_LAT, TOKYO_LNG);
 
 mainPinMarker.addTo(map);
 
 mainPinMarker.on('moveend', (evt) => {
-  adAddress.setAttribute('placeholder', `${getRandomArbitrary(evt.target.getLatLng().lat, 5)}, ${getRandomArbitrary(evt.target.getLatLng().lng, 5)}`);
+  adAddress.setAttribute('value', `${getRandomFloatNumber(evt.target.getLatLng().lat, 5)}, ${getRandomFloatNumber(evt.target.getLatLng().lng, 5)}`);
+  adAddress.setAttribute('placeholder', `${getRandomFloatNumber(evt.target.getLatLng().lat, 5)}, ${getRandomFloatNumber(evt.target.getLatLng().lng, 5)}`);
 });
 
-similarAds.forEach((item) => {
-  createMarker(item.author.avatar, item.OFFER, item. location);
-});
+export {setMainPinCoords, createMarker, TOKYO_LAT, TOKYO_LNG};

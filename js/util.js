@@ -75,4 +75,31 @@ const getRandomArrayElement = (array) => array[getRandomInt(0, array.length - 1)
 
 export {getRandomArrayElement};
 
+const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
+export {isEscEvent};
+
+const isEnterEvent = (evt) => evt.key === 'Enter';
+
+export {isEnterEvent};
+
+const showAlert = (modal) => {
+  const alertContainer = modal.cloneNode(true);
+
+  document.body.append(alertContainer);
+};
+
+export {showAlert};
+
+const getRandomFloatNumber = (min, max, numeralCount) => {
+  let count = 1;
+  for (let counter = 0; counter < numeralCount; counter++) {
+    count *= 10;
+  }
+  if (min >= 0 && max >= 0) {
+    return (min > max) ? (Math.floor((Math.random() * (min - max) + max) * count) / count) : (Math.floor((Math.random() * (max - min) + min) * count) / count);
+  }
+  throw 'Одно из чисел меньше 0';
+};
+
+export {getRandomFloatNumber};

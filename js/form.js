@@ -130,4 +130,25 @@ adCkeckout.addEventListener('change', getSameTimeIn);
 useInactivePageState();
 useInactivePageState();
 
-export {useInactivePageState, useActivePageState, adAddress};
+const resetUserForm = () => {
+  setMainPinCoords(TOKYO_CENTER_LAT, TOKYO_CENTER_LNG);
+};
+
+const sendUserForm = () => {
+  adForm.reset();
+  setMainPinCoords(TOKYO_CENTER_LAT, TOKYO_CENTER_LNG);
+};
+
+const setUserFormSubmit = (onSuccess) => {
+  adForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+
+    sendData(
+      () => onSuccess(),
+      () => openErrorModal(),
+      new FormData(evt.target),
+    );
+  });
+};
+
+export {useInactivePageState, useActivePageState, adAddress, resetUserForm, sendUserForm, setUserFormSubmit};
