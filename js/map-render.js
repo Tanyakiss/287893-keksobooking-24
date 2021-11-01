@@ -1,6 +1,6 @@
 import {useActivePageState, adAddress} from './form.js';
 import {getRandomArbitrary} from './util.js';
-import {similarAds, createCustomPopup} from './popup.js';
+import {createCustomPopup} from './popup.js';
 
 const TOKYO_LAT = 35.68950;
 const TOKYO_LNG = 139.69171;
@@ -75,8 +75,8 @@ const setMainPinCoords = (lat, lng) => {
       lat: lat,
       lng: lng,
     });
-  adAddress.setAttribute('value', `${getRandomFloatNumber(lat, 5)}, ${getRandomFloatNumber(lng, 5)}`);
-  adAddress.setAttribute('placeholder', `${getRandomFloatNumber(lat, 5)}, ${getRandomFloatNumber(lng, 5)}`);
+  adAddress.setAttribute('value', `${getRandomArbitrary(lat, 5)}, ${getRandomArbitrary(lng, 5)}`);
+  adAddress.setAttribute('placeholder', `${getRandomArbitrary(lat, 5)}, ${getRandomArbitrary(lng, 5)}`);
 };
 
 setMainPinCoords(TOKYO_LAT, TOKYO_LNG);
@@ -84,8 +84,8 @@ setMainPinCoords(TOKYO_LAT, TOKYO_LNG);
 mainPinMarker.addTo(map);
 
 mainPinMarker.on('moveend', (evt) => {
-  adAddress.setAttribute('value', `${getRandomFloatNumber(evt.target.getLatLng().lat, 5)}, ${getRandomFloatNumber(evt.target.getLatLng().lng, 5)}`);
-  adAddress.setAttribute('placeholder', `${getRandomFloatNumber(evt.target.getLatLng().lat, 5)}, ${getRandomFloatNumber(evt.target.getLatLng().lng, 5)}`);
+  adAddress.setAttribute('value', `${getRandomArbitrary(evt.target.getLatLng().lat, 5)}, ${getRandomArbitrary(evt.target.getLatLng().lng, 5)}`);
+  adAddress.setAttribute('placeholder', `${getRandomArbitrary(evt.target.getLatLng().lat, 5)}, ${getRandomArbitrary(evt.target.getLatLng().lng, 5)}`);
 });
 
 export {setMainPinCoords, createMarker, TOKYO_LAT, TOKYO_LNG};

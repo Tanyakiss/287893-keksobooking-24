@@ -1,34 +1,30 @@
-import {GUESTS, ROOMS, createAds} from './data.js';
+import {GUESTS, ROOMS} from './data.js';
 import {getRussianCase, getRussianGenitiveCase, getAccommodationType} from './util.js';
 
 const map = document.querySelector('.map');
 const mapCanvas = map.querySelector('#map-canvas');
 const adCardTemplate = document.querySelector('#card').content.querySelector('.popup');
 
-const similarAds = createAds();
-
-const similarListFragment = document.createDocumentFragment();
-
-const createCustomPopup = (offer) => {
+const createCustomPopup = (avatar, offer) => {
   const adElement = adCardTemplate.cloneNode(true);
-  offer.title
-    ? adElement.querySelector('.popup__title').textContent = offer.title
-    : adElement.querySelector('.popup__title').classList.add('visually-hidden');
+  avatar.title
+  ? adElement.querySelector('.popup__title').textContent = offer.title
+  : adElement.querySelector('.popup__title').classList.add('visually-hidden');
   offer.address
-    ? adElement.querySelector('.popup__text--address').textContent = offer.address
-    : adElement.querySelector('.popup__text--address').classList.add('visually-hidden');
+  ? adElement.querySelector('.popup__text--address').textContent = offer.address
+  : adElement.querySelector('.popup__text--address').classList.add('visually-hidden');
   offer.price
-    ? adElement.querySelector('.popup__text--price').textContent = `${offer.price} ₽/ночь`
-    : adElement.querySelector('.popup__text--price').classList.add('visually-hidden');
+  ? adElement.querySelector('.popup__text--price').textContent = `${offer.price} ₽/ночь`
+  : adElement.querySelector('.popup__text--price').classList.add('visually-hidden');
   offer.type
-    ? adElement.querySelector('.popup__type').textContent = getAccommodationType(offer.type)
-    : adElement.querySelector('.popup__type').classList.add('visually-hidden');
+  ? adElement.querySelector('.popup__type').textContent = getAccommodationType(offer.type)
+  : adElement.querySelector('.popup__type').classList.add('visually-hidden');
   offer.rooms && offer.guests
-    ? adElement.querySelector('.popup__text--capacity').textContent = `${offer.rooms} ${getRussianCase(offer.rooms, ROOMS)} для ${offer.guests} ${getRussianGenitiveCase(offer.guests, GUESTS)}`
-    : adElement.querySelector('.popup__text--capacity').classList.add('visually-hidden');
+  ? adElement.querySelector('.popup__text--capacity').textContent = `${offer.rooms} ${getRussianCase(offer.rooms, ROOMS)} для ${offer.guests} ${getRussianGenitiveCase(offer.guests, GUESTS)}`
+  : adElement.querySelector('.popup__text--capacity').classList.add('visually-hidden');
   offer.checkin && offer.checkout
-    ? adElement.querySelector('.popup__text--time').textContent = `Заезд после ${offer.checkin}, выезд до ${offer.checkout}`
-    : adElement.querySelector('.popup__text--time').classList.add('visually-hidden');
+  ? adElement.querySelector('.popup__text--time').textContent = `Заезд после ${offer.checkin}, выезд до ${offer.checkout}`
+  : adElement.querySelector('.popup__text--time').classList.add('visually-hidden');
   if (offer.features) {
     const modifiers = offer.features.map((feature) => `popup__feature--${feature}`);
     adElement.querySelectorAll('.popup__feature').forEach((item) => {
@@ -51,7 +47,8 @@ const createCustomPopup = (offer) => {
   } else {
     adElement.querySelector('.popup__photos').classList.add('visually-hidden');
   }
-  similarListFragment.appendChild(adElement);
+
+  return adElement;
 };
 
-export {mapCanvas, similarAds, createCustomPopup};
+export {mapCanvas, createCustomPopup};
