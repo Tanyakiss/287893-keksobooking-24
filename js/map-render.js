@@ -1,4 +1,4 @@
-import {useActivePageState, adAddress} from './form.js';
+import {useActivePageState, adAddress} from './page-status.js';
 import {getRandomArbitrary} from './util.js';
 import {createCustomPopup} from './popup.js';
 

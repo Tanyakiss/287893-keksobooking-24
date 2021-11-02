@@ -38,18 +38,6 @@ const useInactivePageState = () => {
   });
 };
 
-const useActivePageState = () => {
-  adForm.classList.remove('ad-form--disabled');
-  filterForm.classList.remove('map__filters--disabled');
-  adFormFields.forEach((item) => {
-    item.disabled = false;
-  });
-  filterFormFields.forEach((item) => {
-    item.disabled = false;
-  });
-};
-
-
 const getSameTimeIn = () => {
   adCkeckin.value = adCkeckout.value;
 };
