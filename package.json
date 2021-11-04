@@ -12,17 +12,11 @@
   },
   "devDependencies": {
     "browser-sync": "2.26.14",
-    "bufferutil": "^4.0.1",
-    "eslint": "^7.18.0",
-    "eslint-config-htmlacademy": "4.1.0",
-    "utf-8-validate": "^5.0.2",
-    "ws": "^8.2.3"
+    "eslint": "7.18.0",
+    "eslint-config-htmlacademy": "4.0.0"
   },
   "license": "MIT",
-  "dependencies": {
-    "esm": "^3.2.25",
-    "express": "^4.17.1"
-  },
+  "dependencies": {},
   "scripts": {
     "start": "browser-sync start --server --no-ui --files \"js/**/*.js\"",
     "test": "eslint js/"
