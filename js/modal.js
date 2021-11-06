@@ -1,4 +1,4 @@
-import {showAlert, isEscEvent, isEnterEvent} from './util.js';
+import {isEscEvent, isEnterEvent} from './util.js';
 import {mapCanvas} from './popup.js';
 
 const showLoadFailMessage = (message) => {
