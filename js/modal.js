@@ -1,9 +1,6 @@
 import {showAlert, isEscEvent, isEnterEvent} from './util.js';
 import {mapCanvas} from './popup.js';
 
-showAlert(document.querySelector('#error').content.querySelector('.error'));
-showAlert(document.querySelector('#success').content.querySelector('.success'));
-
 const showLoadFailMessage = (message) => {
   const errorMessageBlock = document.createElement('div');
   errorMessageBlock.style.cssText = `
