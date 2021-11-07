@@ -88,4 +88,4 @@ mainPinMarker.on('moveend', (evt) => {
   adAddress.setAttribute('placeholder', `${getRandomArbitrary(evt.target.getLatLng().lat, 5)}, ${getRandomArbitrary(evt.target.getLatLng().lng, 5)}`);
 });
 
-export {setMainPinCoords, createMarker, TOKYO_LAT, TOKYO_LNG};
+export {setMainPinCoords, createMarker, TOKYO_LAT, TOKYO_LNG, markerGroup};
