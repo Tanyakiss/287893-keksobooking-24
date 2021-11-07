@@ -27,7 +27,7 @@ const showLoadFailMessage = (message) => {
 
 const adSuccess = document.querySelector('.success');
 const adError = document.querySelector('.error');
-const adErrorClose = adError.querySelector('.error__button');
+const adErrorClose = document.querySelector('.error__button');
 
 const onSuccessPopupEscKeydown = (evt) => {
   if (isEscEvent(evt) || evt.currentTarget === document) {
