@@ -1,3 +1,7 @@
+import {setMainPinCoords, TOKYO_LAT, TOKYO_LNG} from './map-render.js';
+import {openErrorModal} from './modal.js';
+import {sendData} from './server.js';
+
 const MIN_TITLE_LENGTH = 30;
 const MAX_TITLE_LENGTH = 100;
 const MIN_PRICE = 0;
@@ -33,18 +37,6 @@ const useInactivePageState = () => {
     item.disabled = true;
   });
 };
-
-const useActivePageState = () => {
-  adForm.classList.remove('ad-form--disabled');
-  filterForm.classList.remove('map__filters--disabled');
-  adFormFields.forEach((item) => {
-    item.disabled = false;
-  });
-  filterFormFields.forEach((item) => {
-    item.disabled = false;
-  });
-};
-
 
 const getSameTimeIn = () => {
   adCkeckin.value = adCkeckout.value;
@@ -130,4 +122,25 @@ adCkeckout.addEventListener('change', getSameTimeIn);
 useInactivePageState();
 useInactivePageState();
 
-export {useInactivePageState, useActivePageState, adAddress};
+const resetUserForm = () => {
+  setMainPinCoords(TOKYO_LAT, TOKYO_LNG);
+};
+
+const sendUserForm = () => {
+  adForm.reset();
+  setMainPinCoords(TOKYO_LAT, TOKYO_LNG);
+};
+
+const setUserFormSubmit = (onSuccess) => {
+  adForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+
+    sendData(
+      () => onSuccess(),
+      () => openErrorModal(),
+      new FormData(evt.target),
+    );
+  });
+};
+
+export {useInactivePageState, adAddress, resetUserForm, sendUserForm, setUserFormSubmit};

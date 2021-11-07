@@ -1,6 +1,6 @@
-import {useActivePageState, adAddress} from './form.js';
+import {useActivePageState, adAddress} from './page-status.js';
 import {getRandomArbitrary} from './util.js';
-import {similarAds, createCustomPopup} from './popup.js';
+import {createCustomPopup} from './popup.js';
 
 const TOKYO_LAT = 35.68950;
 const TOKYO_LNG = 139.69171;
@@ -10,14 +10,14 @@ const map = L.map('map-canvas')
     useActivePageState();
   })
   .setView({
-    lat: 59.95830,
-    lng: 30.31748,
-  }, 13);
+    lat: TOKYO_LAT,
+    lng: TOKYO_LNG,
+  }, 12);
 
 L.tileLayer(
   'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   },
 ).addTo(map);
 
@@ -69,14 +69,23 @@ const createMarker = (avatar, offer, point) => {
     );
 };
 
-adAddress.setAttribute('placeholder', `${getRandomArbitrary(TOKYO_LAT, 5)}, ${getRandomArbitrary(TOKYO_LNG, 5)}`);
+const setMainPinCoords = (lat, lng) => {
+  mainPinMarker
+    .setLatLng({
+      lat: lat,
+      lng: lng,
+    });
+  adAddress.setAttribute('value', `${getRandomArbitrary(lat, 5)}, ${getRandomArbitrary(lng, 5)}`);
+  adAddress.setAttribute('placeholder', `${getRandomArbitrary(lat, 5)}, ${getRandomArbitrary(lng, 5)}`);
+};
+
+setMainPinCoords(TOKYO_LAT, TOKYO_LNG);
 
 mainPinMarker.addTo(map);
 
 mainPinMarker.on('moveend', (evt) => {
+  adAddress.setAttribute('value', `${getRandomArbitrary(evt.target.getLatLng().lat, 5)}, ${getRandomArbitrary(evt.target.getLatLng().lng, 5)}`);
   adAddress.setAttribute('placeholder', `${getRandomArbitrary(evt.target.getLatLng().lat, 5)}, ${getRandomArbitrary(evt.target.getLatLng().lng, 5)}`);
 });
 
-similarAds.forEach((item) => {
-  createMarker(item.author.avatar, item.OFFER, item. location);
-});
+export {setMainPinCoords, createMarker, TOKYO_LAT, TOKYO_LNG};

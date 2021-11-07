@@ -75,4 +75,18 @@ const getRandomArrayElement = (array) => array[getRandomInt(0, array.length - 1)
 
 export {getRandomArrayElement};
 
+const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
+export {isEscEvent};
+
+const isEnterEvent = (evt) => evt.key === 'Enter';
+
+export {isEnterEvent};
+
+const showAlert = (modal) => {
+  const alertContainer = modal.cloneNode(true);
+
+  document.body.append(alertContainer);
+};
+
+export {showAlert};

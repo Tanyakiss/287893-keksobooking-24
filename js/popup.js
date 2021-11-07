@@ -1,17 +1,13 @@
-import {GUESTS, ROOMS, createAds} from './data.js';
+import {GUESTS, ROOMS} from './data.js';
 import {getRussianCase, getRussianGenitiveCase, getAccommodationType} from './util.js';
 
 const map = document.querySelector('.map');
 const mapCanvas = map.querySelector('#map-canvas');
 const adCardTemplate = document.querySelector('#card').content.querySelector('.popup');
 
-const similarAds = createAds();
-
-const similarListFragment = document.createDocumentFragment();
-
-const createCustomPopup = (offer) => {
+const createCustomPopup = (avatar, offer) => {
   const adElement = adCardTemplate.cloneNode(true);
-  offer.title
+  avatar.title
     ? adElement.querySelector('.popup__title').textContent = offer.title
     : adElement.querySelector('.popup__title').classList.add('visually-hidden');
   offer.address
@@ -51,7 +47,8 @@ const createCustomPopup = (offer) => {
   } else {
     adElement.querySelector('.popup__photos').classList.add('visually-hidden');
   }
-  similarListFragment.appendChild(adElement);
+
+  return adElement;
 };
 
-export {mapCanvas, similarAds, createCustomPopup};
+export {mapCanvas, createCustomPopup};
