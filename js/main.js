@@ -1,11 +1,7 @@
 import {debounce} from './utils/debounce.js';
-import './popup.js';
-import './form.js';
-import {SIMILAR_ADS_COUNT} from './data.js';
-import {createMarker} from './map-render.js';
-import './modal.js';
+import {setFilterFormChange, renderSimilarList} from './filter.js';
+import {getData, getDataUrl} from './server.js';
 import {setUserFormSubmit, sendUserForm} from './form.js';
-import {getData} from './server.js';
 import {showLoadFailMessage} from './modal.js';
 
 const RERENDER_DELAY = 500;
